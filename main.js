@@ -19,9 +19,9 @@ document.querySelector("#hide-nav button").addEventListener('click',function(){
 })
 
 
-var listColor = {
-    backgroundGrey: true
-}
+// var listColor = {
+//     backgroundGrey: true
+// }
 
 document.querySelector('#add-guest input[type="text"]').addEventListener('keydown', function(enterText){
     var itemsListUl = document.querySelector('.guest-list')
@@ -31,16 +31,10 @@ document.querySelector('#add-guest input[type="text"]').addEventListener('keydow
         var usrText = inputNode.value
         var liNode = document.createElement('li')
         liNode.textContent = usrText
+        liNode.classList.add('guest')
         itemsListUl.appendChild(liNode)
         inputNode.value = ''
-        if(listColor.backgroundGrey){
-            liNode.style.background = '#bdc3c7'
-            listColor.backgroundGrey = false
-        }
-        else {
-            liNode.style.background = 'tomato'
-            listColor.backgroundGrey = true
-        }
+
     }
 })
 
@@ -52,15 +46,9 @@ document.querySelector('#add-guest-bonus input[type="text"]').addEventListener('
         var usrText = inputNode.value
         var liNode = document.createElement('li')
         liNode.textContent = usrText
+        liNode.classList.add('guest')
         itemsListUl2.appendChild(liNode)
         inputNode.value = ''
-        if(listColor.backgroundGrey){
-            liNode.style.background = '#bdc3c7'
-            listColor.backgroundGrey = false
-        }
-        else {
-            liNode.style.background = 'tomato'
-            listColor.backgroundGrey = true
-        }
+
     }
 })
