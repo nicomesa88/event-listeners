@@ -43,3 +43,24 @@ document.querySelector('#add-guest input[type="text"]').addEventListener('keydow
         }
     }
 })
+
+document.querySelector('#add-guest-bonus input[type="text"]').addEventListener('keydown', function(enterText){
+    var itemsListUl2 = document.querySelector('#add-guest-bonus .guest-list')
+    if (enterText.keyCode === 13){
+        console.log('target>>',enterText.target)
+        var inputNode = enterText.target
+        var usrText = inputNode.value
+        var liNode = document.createElement('li')
+        liNode.textContent = usrText
+        itemsListUl2.appendChild(liNode)
+        inputNode.value = ''
+        if(listColor.backgroundGrey){
+            liNode.style.background = '#bdc3c7'
+            listColor.backgroundGrey = false
+        }
+        else {
+            liNode.style.background = 'tomato'
+            listColor.backgroundGrey = true
+        }
+    }
+})
