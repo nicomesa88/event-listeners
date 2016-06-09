@@ -18,6 +18,11 @@ document.querySelector("#hide-nav button").addEventListener('click',function(){
     } console.log(divState)
 })
 
+
+var listColor = {
+    backgroundGrey: true
+}
+
 document.querySelector('#add-guest input[type="text"]').addEventListener('keydown', function(enterText){
     var itemsListUl = document.querySelector('.guest-list')
     if (enterText.keyCode === 13){
@@ -28,5 +33,13 @@ document.querySelector('#add-guest input[type="text"]').addEventListener('keydow
         liNode.textContent = usrText
         itemsListUl.appendChild(liNode)
         inputNode.value = ''
+        if(listColor.backgroundGrey){
+            liNode.style.background = '#bdc3c7'
+            listColor.backgroundGrey = false
+        }
+        else {
+            liNode.style.background = 'tomato'
+            listColor.backgroundGrey = true
+        }
     }
 })
