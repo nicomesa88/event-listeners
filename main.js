@@ -17,3 +17,16 @@ document.querySelector("#hide-nav button").addEventListener('click',function(){
 
     } console.log(divState)
 })
+
+document.querySelector('#add-guest input[type="text"]').addEventListener('keydown', function(enterText){
+    var itemsListUl = document.querySelector('.guest-list')
+    if (enterText.keyCode === 13){
+        console.log('target>>',enterText.target)
+        var inputNode = enterText.target
+        var usrText = inputNode.value
+        var liNode = document.createElement('li')
+        liNode.textContent = usrText
+        itemsListUl.appendChild(liNode)
+        inputNode.value = ''
+    }
+})
